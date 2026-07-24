@@ -1,0 +1,11 @@
+from ultralytics import YOLO
+from transformers import pipeline
+cv = YOLO('yolov8n.pt')
+result = cv('/content/Unleash 10 One Cart Half Price Tricks To Save Today.webp')
+result[0].show()
+nlp=pipeline("sentiment-analysis")
+text = "I am a disco dancer"
+output = nlp(text)
+
+print(output[0]['label'])
+print(output[0]['score'])
